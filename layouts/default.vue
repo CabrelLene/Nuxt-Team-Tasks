@@ -4,7 +4,11 @@
       <strong>Nuxt Team Tasks</strong>
       <nav style="display:flex; gap:12px;">
         <NuxtLink to="/">Home</NuxtLink>
+
 + <NuxtLink to="/tasks">Tasks</NuxtLink>
+ 
++ <NuxtLink to="/about">About</NuxtLink>
+ feature/about-page
 
         <NuxtLink to="/">Home</NuxtLink>
         <!-- On va volontairement modifier ce menu dans plusieurs branches -> conflits réalistes -->
