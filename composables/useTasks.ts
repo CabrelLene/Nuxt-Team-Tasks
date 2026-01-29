@@ -13,6 +13,14 @@ export function useTasks() {
     loaded.value = true;
   }
 
+  function safeId() {
+  // crypto.randomUUID est top, mais pas garanti partout
+  // fallback simple et stable
+  if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+  return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+
   function persist() {
     if (process.client) localStorage.setItem("tasks", JSON.stringify(tasks.value));
   }
@@ -20,7 +28,8 @@ export function useTasks() {
   function add(title: string) {
     const t = title.trim();
     if (!t) return;
-    tasks.value.unshift({ id: crypto.randomUUID(), title: t, done: false, createdAt: Date.now() });
+    tasks.value.unshift({ id: safeId(),
+title: t, done: false, createdAt: Date.now() });
     persist();
   }
 
