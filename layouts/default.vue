@@ -5,9 +5,10 @@
       <nav style="display:flex; gap:12px;">
         <NuxtLink to="/">Home</NuxtLink>
 
-+ <NuxtLink to="/tasks">Tasks</NuxtLink>
+ <NuxtLink to="/tasks">Tasks</NuxtLink>
  
-+ <NuxtLink to="/about">About</NuxtLink>
+ <NuxtLink to="/about">About</NuxtLink>
+<NuxtLink to="/stats">Stats</NuxtLink>
  feature/about-page
 
         <NuxtLink to="/">Home</NuxtLink>
